@@ -50,5 +50,8 @@ public class JwtAuthFilter extends OncePerRequestFilter{ //gaurentees the logic 
             }
         }
         filterChain.doFilter(request, response);
+
+        System.out.println("PATH"+ request.getServletPath());
+        System.out.println("AUTH HEADER" + request.getHeader("Authorization"));
     }
 }
