@@ -4,8 +4,9 @@
 name: Ecom - Maven build
 
 on:
-  release:
-    types: [created]
+  push:
+    branches:
+      - master
 
 jobs:
   build:
