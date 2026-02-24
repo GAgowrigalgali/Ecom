@@ -26,11 +26,13 @@ jobs:
         server-id: github # Value of the distributionManagement/repository/id field of the pom.xml
         settings-path: ${{ github.workspace }} # location for the settings.xml file
 
+    - name: Make mvnw executable
+      run: chmod +x mvnw
+
     - name: Build
       run: ./mvnw clean package -DskipTests
 
-    - name: Make mvnw executable
-      run: chmod +x mvnw
+    
 
     - name: Upload JAR
       uses: actions/upload-artifact@v4
