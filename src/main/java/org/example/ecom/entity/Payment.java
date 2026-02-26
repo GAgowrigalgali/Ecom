@@ -28,6 +28,17 @@ public class Payment {
     private BigDecimal amount;
 
     @Column(unique = true)
+    private String stripePaymentIntentId;
+
+    public String getStripePaymentIntentId() {
+        return stripePaymentIntentId;
+    }
+
+    public void setStripePaymentIntentId(String stripePaymentIntentId) {
+        this.stripePaymentIntentId = stripePaymentIntentId;
+    }
+
+    @Column(unique = true)
     private String stripePaymentTransactionId; // from gateway
 
     private LocalDateTime createdAt;
